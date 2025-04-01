@@ -1,0 +1,17 @@
+limit = int(input("Enter the Limit of the Double Loop: "))
+
+print("Result:")
+for i in range(limit):
+    for j in range(limit):
+        added_value = i + j
+        print(f"[{i}][{j}] Added value is {added_value}")
+
+let limit = parseInt(prompt("Enter the Limit of the Double Loop:"));
+
+console.log("Result:");
+for (let i = 0; i < limit; i++) {
+    for (let j = 0; j < limit; j++) {
+        let addedValue = i + j;
+        console.log(`[${i}][${j}] Added value is ${addedValue}`);
+    }
+}
