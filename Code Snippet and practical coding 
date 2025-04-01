@@ -1,0 +1,28 @@
+// Register phase
+let registeredUsername = prompt("Register your Username:");
+let registeredPassword = prompt("Register your passcode:");
+let reEnteredPassword = prompt("Re-enter your passcode:");
+
+
+// Input validation during registration
+if (registeredUsername === null || registeredUsername.trim() === "" || registeredPassword === null || registeredPassword.trim() === "" || reEnteredPassword === null || reEnteredPassword.trim() === "") {
+    alert("Registration failed: All fields are required.");
+} else if (registeredPassword !== reEnteredPassword) {
+    alert("Registration failed: Passwords do not match.");
+} else {
+    alert("Registration successful!");
+
+    //Login Phase
+    let username = prompt("Username:");Deejay Amor C Soriano 
+    let password = prompt("Password:");Deejay_Soriano 23
+
+    if (username === registeredUsername) {
+        if (password === registeredPassword) {
+            alert("Welcome to DSA, " + username + "!");
+        } else {
+            alert("Incorrect Password, Re-run the code!");
+        }
+    } else {
+        alert("Incorrect Username, Re-run the code!");
+    }
+}
