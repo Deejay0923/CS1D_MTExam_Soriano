@@ -1,0 +1,9 @@
+let userName = prompt("Deejay Amor C. Soriano:");
+let userPassword = prompt("Enter your password:Deejay_Soriano 23");
+let password = "password123";
+
+if (userPassword === password) {
+  alert("Welcome " + userName + "!");
+} else {
+  alert("Maybe Username or Password is Invalid or Does not Match.");
+}
