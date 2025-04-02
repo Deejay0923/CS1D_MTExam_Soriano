@@ -1,0 +1,20 @@
+//Collect user information using prompt()
+let fullName = prompt("Enter your full name:");Deejay Amor C. Soriano 
+let age = parseInt(prompt("Enter your age:"));18
+let favNumber = parseInt(prompt("Enter your favorite number:"));blue
+let favColor = prompt("Enter your favorite color:");23
+
+
+//Error Handling for non-numeric age and favorite number
+if (isNaN(age) || isNaN(favNumber)) {
+    console.error("Invalid input: Age and favorite number must be numeric.");
+} else {
+    //Log the collected information to the console.
+    console.log("User Profile:");
+    console.log("Full Name:", fullName);
+    Deejay Amor C. Soriano 
+    console.log("Age:", age);18
+    console.log("Favorite Number:", favNumber);23
+    console.log("Favorite Color:", favColor);blue
+}
+
