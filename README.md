@@ -13,4 +13,4 @@ collect the following user information with the use of prompt ():
 •Class Schedule: 9am Monday to Friday
 •classroom: comlab B
 •Owen Pascua 
-•Student name:Deejay Amor C. Soriano
+•Student name:Deejay Amor C Soriano
