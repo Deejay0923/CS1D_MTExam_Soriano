@@ -1,0 +1,70 @@
+def get_student_info():
+    """Gets student information from user input with error handling."""
+
+    while True:
+        try:
+            first_name = input("Enter first name:Deejay ").title()  # Title case for names
+            middle_name = input("Cabael (optional): ").title()
+            last_name = input("Soriano ").title()
+            birthdate = input("September 23 2006(YYYY-MM-DD): ")
+            birthplace_barangay = input("Enter birthplace barangay: Palacapac candon city").title()
+            birthplace_city = input("Enter birthplace city/town:Tagudin Gen Hospital ").title()
+            birthplace_country = input("Enter birthplace country: Philippines ").title()
+            birthplace_zip = int(input("Enter birthplace zip code: "))  # Ensure zip code is an integer
+
+            address_barangay = input("Enter address barangay: ").title()
+            address_city = input("Enter address city/town: ").title()
+            address_country = input("Enter address country: ").title()
+            address_zip = int(input("Enter address zip code: "))
+
+            course = input("Enter course: ").title()
+            year = int(input("Enter year level: ")) # Ensure year is an integer
+            dream_job = input("Enter dream job (ITCS field): ").title()
+
+            return {
+                "first_name": first_name,
+                "middle_name": middle_name,
+                "last_name": last_name,
+                "birthdate": birthdate,
+                "birthplace": {
+                    "barangay": birthplace_barangay,
+                    "city": birthplace_city,
+                    "country": birthplace_country,
+                    "zip_code": birthplace_zip,
+                },
+                "address": {
+                    "barangay": address_barangay,
+                    "city": address_city,
+                    "country": address_country,
+                    "zip_code": address_zip,
+                },
+                "course": course,
+                "year": year,
+                "dream_job": dream_job,
+            }
+        except ValueError:
+            print("Invalid input. Please enter numeric values for zip code and year.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
+
+def print_student_info(student):
+    """Prints student information in a formatted sentence."""
+
+    name = f"{student['first_name']} {student['middle_name']} {student['last_name']}" if student['middle_name'] else f"{student['first_name']} {student['last_name']}"
+    print(f"{name}, born on {student['birthdate']} in {student['birthplace']['barangay']}, {student['birthplace']['city']}, {student['birthplace']['country']} ({student['birthplace']['zip_code']}), residing at {student['address']['barangay']}, {student['address']['city']}, {student['address']['country']} ({student['address']['zip_code']}), is currently taking {student['course']} Year {student['year']} and dreams of becoming a {student['dream_job']}.")
+
+
+# Get student information
+student1 = get_student_info()
+student2 = get_student_info()
+student3 = get_student_info()
+
+# Print student information
+print("\nStudent Information:")
+print_student_info(student1)
+print("\nClassmate 1 Information:")
+print_student_info(student2)
+print("\nClassmate 2 Information:")
+print_student_info(student3)
+
