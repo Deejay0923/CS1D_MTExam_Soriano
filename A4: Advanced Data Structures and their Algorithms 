@@ -1,0 +1,23 @@
+Hash Tables in DSA/JavaScript
+ 
+Concept: A hash table (also known as a hash map) is a data structure that implements an associative array abstract data type, a structure that can map keys to values.  It uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.  This allows for very fast average-case lookups, insertions, and deletions.
+ 
+ 
+ 
+Hash Functions: A hash function is a crucial component. It takes a key as input and returns an integer (the hash code or index) that determines the bucket where the corresponding value is stored.  A good hash function distributes keys uniformly across the hash table to minimize collisions (when multiple keys map to the same index).
+ 
+
+Hash Sets, Hash Tables, Hash Maps:  These terms are often used interchangeably, but there are subtle differences. A hash set stores only keys (no associated values), while hash tables and hash maps store key-value pairs.  Hash tables are a general concept, while hash maps are a specific implementation. In JavaScript,  Map  objects behave like hash maps.
+ 
+ 
+Collision Handling: When collisions occur, techniques like separate chaining (storing colliding keys in a linked list at the same index) or open addressing (probing for an empty slot) are used to resolve them.
+ 
+ 
+Trees in DSA/JavaScript
+ 
+Types and Concepts: Trees are hierarchical, non-linear data structures consisting of nodes connected by edges.  Common types include binary trees (each node has at most two children), binary search trees (BSTs – a binary tree where the left subtree contains smaller values and the right subtree contains larger values), and many others (e.g., AVL trees, red-black trees, B-trees).
+
+
+Tree Traversals:  These are algorithms for visiting all nodes in a tree.  Common methods include inorder (left, root, right), preorder (root, left, right), and postorder (left, right, root) traversals for depth-first search, and level-order traversal (breadth-first search).
+
+ 
