@@ -1,0 +1,119 @@
+function bubbleSort(arr) {
+  let len = arr.length;
+  let swapped;
+  do {
+    swapped = false;
+    for (let i = 0; i < len - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        // Swap elements
+
+function selectionSort(arr) {
+  let len = arr.length;
+  for (let i = 0; i < len - 1; i++) {
+    let minIndex = i;
+    for (let j = i + 1; j < len; j++) {
+      if (arr[j] < arr[minIndex]) {
+        minIndex = j;
+      }
+    }
+    // Swap the found minimum element with the first element
+
+function insertionSort(arr) {
+  let len = arr.length;
+  for (let i = 1; i < len; i++) {
+    let key = arr[i];
+    let j = i - 1;
+    while (j >= 0 && arr[j] > key) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+    arr[j + 1] = key;
+  }
+  return arr;
+}
+
+let arr3 =;
+console.log(insertionSort(arr3)); // Output:
+
+function mergeSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+  const mid = Math.floor(arr.length / 2);
+  const left = arr.slice(0, mid);
+  const right = arr.slice(mid);
+  return merge(mergeSort(left), mergeSort(right));
+}
+
+function merge(left, right) {
+  let result =;
+  let i = 0;
+  let j = 0;
+  while (i < left.length && j < right.length) {
+    if (left[i] < right[j]) {
+      result.push(left[i]);
+      i++;
+    } else {
+      result.push(right[j]);
+      j++;
+    }
+  }
+  return result.concat(left.slice(i)).concat(right.slice(j));
+}
+
+let arr4 =;
+console.log(mergeSort(arr4)); // Output:
+
+function quickSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+  let pivot = arr;
+  let left =;
+  let right =;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+  return quickSort(left).concat(pivot, quickSort(right));
+}
+
+let arr5 =;
+console.log(quickSort(arr5)); // Output:
+
+function countingSort(arr, exp) {
+  let output = new Array(arr.length).fill(0);
+  let count = new Array(10).fill(0);
+
+  for (let i = 0; i < arr.length; i++) {
+    count / exp) % 10]++;
+  }
+
+  for (let i = 1; i < 10; i++) {
+    count[i] += count[i - 1];
+  }
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    output / exp) % 10] - 1] = arr[i];
+    count / exp) % 10]--;
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = output[i];
+  }
+  return arr;
+}
+
+function radixSort(arr) {
+  let max = Math.max(...arr);
+  for (let exp = 1; Math.floor(max / exp) > 0; exp *= 10) {
+    arr = countingSort(arr, exp);
+  }
+  return arr;
+}
+
+let arr6 =;
+console.log(radixSort(arr6)); // Output:
