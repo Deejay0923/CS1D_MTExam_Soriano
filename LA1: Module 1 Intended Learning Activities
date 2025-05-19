@@ -1,0 +1,27 @@
+// comparison.js
+
+// 1. Create variables for favorite numbers
+const firstFavNumb = 7;  // Replace with your first favorite number
+const secondFavNumb = 3; // Replace with your second favorite number
+
+// 2. Perform comparisons and log results
+
+console.log("Greater than (firstFavNumb > secondFavNumb):", firstFavNumb > secondFavNumb);
+console.log("Less than (firstFavNumb < secondFavNumb):", firstFavNumb < secondFavNumb);
+console.log("Greater than or equal to (firstFavNumb >= secondFavNumb):", firstFavNumb >= secondFavNumb);
+console.log("Less than or equal to (firstFavNumb <= secondFavNumb):", firstFavNumb <= secondFavNumb);
+console.log("Strict equality (firstFavNumb === secondFavNumb):", firstFavNumb === secondFavNumb);
+console.log("Loose equality (firstFavNumb == secondFavNumb):", firstFavNumb == secondFavNumb);
+console.log("Strict inequality (firstFavNumb !== secondFavNumb):", firstFavNumb !== secondFavNumb);
+console.log("Loose inequality (firstFavNumb != secondFavNumb):", firstFavNumb != secondFavNumb);
+
+
+//Example with strings to illustrate loose vs. strict equality
+
+const str1 = "7";
+const str2 = 7;
+
+console.log("\nExample with Strings:");
+console.log("Strict equality (str1 === str2):", str1 === str2); //false - different types
+console.log("Loose equality (str1 == str2):", str1 == str2);  //true - Javascript does type coercion
+
