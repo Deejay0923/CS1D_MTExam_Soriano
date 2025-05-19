@@ -1,0 +1,60 @@
+let age = 20;
+if (age >= 18) {
+  console.log("You are an adult.");
+}
+
+let temperature = 25;
+if (temperature > 30) {
+  console.log("It's hot!");
+} else {
+  console.log("It's not too hot.");
+}
+
+let grade = 85;
+if (grade >= 90) {
+  console.log("A");
+} else if (grade >= 80) {
+  console.log("B");
+} else if (grade >= 70) {
+  console.log("C");
+} else {
+  console.log("F");
+}
+
+let day = 2;
+switch (day) {
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  default:
+    console.log("Other day");
+}
+
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+let count = 0;
+while (count < 5) {
+  console.log(count);
+  count++;
+}
+
+let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+
+let person = { name: "John", age: 30 };
+for (let key in person) {
+  console.log(key + ": " + person[key]);
+}
+
+let colors = ["red", "green", "blue"];
+for (let color of colors) {
+  console.log(color);
+}
