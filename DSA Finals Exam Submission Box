@@ -1,0 +1,205 @@
+1.Coding Problem 1: String Array Operations - Palindrome
+// palindrome.js
+
+// Get input strings using prompt()
+let word1 = prompt("Enter the first word (RACECAR):");
+let word2 = prompt("Enter the second word (RECORDER):");
+
+// Function to check if a string is a palindrome
+function checkPalindrome(str) {
+    // Convert string to uppercase for consistency
+    str = str.toUpperCase();
+    
+    // Create reversed string by splitting into array, reversing, and joining
+    let reversedStr = str.split('').reverse().join('');
+    
+    // Log original and reversed strings
+    console.log(`Original string: ${str}`);
+    console.log(`Reversed string: ${reversedStr}`);
+    
+    // Return true if palindrome, false if not
+    return str === reversedStr;
+}
+
+// Test both words and log results
+console.log("\nTesting first word (RACECAR):");
+console.log(`Is palindrome? ${checkPalindrome(word1)}`);
+
+console.log("\nTesting second word (RECORDER):");
+console.log(`Is palindrome? ${checkPalindrome(word2)}`);
+
+Testing first word (RACECAR):
+Original string: RACECAR
+Reversed string: RACECAR
+Is palindrome? true
+
+Testing second word (RECORDER):
+Original string: RECORDER
+Reversed string: REDROCER
+Is palindrome? false
+
+2.Coding Problem 2: Single Dimensional Array Operations – Array Sorting
+// Get numbers array using prompt
+let numbers = [];
+for (let i = 0; i < 9; i++) {
+    let num = prompt(`Enter number ${i + 1} (default values: 24, 65, 21, 5, 9, 32, 42, 80, 57):`);
+    numbers.push(Number(num));
+}
+
+// Get names array using prompt
+let names = [];
+for (let i = 0; i < 5; i++) {
+    let name = prompt(`Enter name ${i + 1} (default values: Zenvo, Erica, Jordie, Alicia, Redon):`);
+    names.push(name);
+}
+
+// Merge both arrays
+let mergedArray = [...numbers, ...names];
+console.log("Merged Array:");
+console.log(mergedArray);
+
+// Sort numbers in reverse order
+let sortedNumbers = [...numbers].sort((a, b) => b - a);
+console.log("\nNumbers sorted in reverse order:");
+console.log(sortedNumbers);
+
+// Sort names alphabetically
+let sortedNames = [...names].sort();
+console.log("\nNames sorted alphabetically:");
+console.log(sortedNames);
+
+let numbers = [24, 65, 21, 5, 9, 32, 42, 80, 57];
+let names = ["Zenvo", "Erica", "Jordie", "Alicia", "Redon"];
+
+let mergedArray = [...numbers, ...names];
+console.log("Merged Array:");
+console.log(mergedArray);
+
+let sortedNumbers = [...numbers].sort((a, b) => b - a);
+console.log("\nNumbers sorted in reverse order:");
+console.log(sortedNumbers);
+
+let sortedNames = [...names].sort();
+console.log("\nNames sorted alphabetically:");
+console.log(sortedNames);
+
+3.Coding Problem 3: Multi-Dimensional Array - Array Restructuring
+const names = ['Genevieve', 'Juan', 'Luna', 'Gabriel', 'Elise'];
+const ages = [24, 65, 21, 5, 9];
+
+// Create a new restructured array
+const restructuredArray = [];
+
+// Combine the arrays into [name, age] pairs
+for (let i = 0; i < names.length; i++) {
+    restructuredArray.push([names[i], ages[i]]);
+}
+
+// Log each [name, age] pair on a new line
+restructuredArray.forEach(pair => {
+    console.log(pair);
+});
+
+// Initialize empty arrays
+const names = [];
+const ages = [];
+
+// Get 5 names using prompt
+for (let i = 0; i < 5; i++) {
+    const name = prompt(`Enter name ${i + 1}:`);
+    names.push(name);
+}
+
+// Get 5 ages using prompt
+for (let i = 0; i < 5; i++) {
+    const age = parseInt(prompt(`Enter age for ${names[i]}:`));
+    ages.push(age);
+}
+
+// Create a new restructured array
+const restructuredArray = [];
+
+// Combine the arrays into [name, age] pairs
+for (let i = 0; i < names.length; i++) {
+    restructuredArray.push([names[i], ages[i]]);
+}
+
+// Log each [name, age] pair on a new line
+restructuredArray.forEach(pair => {
+    console.log(pair);
+});
+
+['Genevieve', 24]
+['Juan', 65]
+['Luna', 21]
+['Gabriel', 5]
+['Elise', 9]
+
+4.Coding Problem 4: Grocery Items with Stacks:
+// Initialize empty array for grocery stack
+let groceryStack = [];
+
+// Peek function to check if stack is empty and return top item
+function peek() {
+    if (groceryStack.length === 0) {
+        return "Stack is empty";
+    }
+    return groceryStack[groceryStack.length - 1];
+}
+
+// Push function to add item to stack
+function push(item) {
+    groceryStack.push(item);
+    console.log("\nAdded item:", item);
+    console.log("Current stack:", groceryStack);
+    console.log("Top item (peek):", peek());
+}
+
+// Pop function to remove last item
+function pop() {
+    if (peek() === "Stack is empty") {
+        console.log("\nCannot pop: Stack is empty");
+        return;
+    }
+    const removedItem = groceryStack.pop();
+    console.log("\nRemoved item:", removedItem);
+    console.log("Current stack:", groceryStack);
+    console.log("Top item (peek):", peek());
+    return removedItem;
+}
+
+// Get 5 grocery items from user
+console.log("Please enter 5 grocery items:");
+for (let i = 0; i < 5; i++) {
+    const item = prompt(`Enter grocery item ${i + 1}:`);
+    push(item);
+}
+
+// Example of popping an item (optional)
+// pop();
+
+Please enter 5 grocery items:
+
+Added item: Milk
+Current stack: ["Milk"]
+Top item (peek): Milk
+
+Added item: Bread
+Current stack: ["Milk", "Bread"]
+Top item (peek): Bread
+
+Added item: Eggs
+Current stack: ["Milk", "Bread", "Eggs"]
+Top item (peek): Eggs
+
+Added item: Cheese
+Current stack: ["Milk", "Bread", "Eggs", "Cheese"]
+Top item (peek): Cheese
+
+Added item: Apples
+Current stack: ["Milk", "Bread", "Eggs", "Cheese", "Apples"]
+Top item (peek): Apples
+
+Removed item: Apples
+Current stack: ["Milk", "Bread", "Eggs", "Cheese"]
+Top item (peek): Cheese
