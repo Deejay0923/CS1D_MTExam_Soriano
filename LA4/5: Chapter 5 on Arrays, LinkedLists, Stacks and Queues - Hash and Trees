@@ -1,0 +1,145 @@
+// assignment_LA4.js - Queue-based Customer Service System
+
+// Initialize the customer queue
+let customerQueue = [];
+const initialCustomers = ['Elaine', 'Althea', 'Angelo', 'Lito', 'Engelbert'];
+
+// Function to display the current queue
+function displayQueue() {
+    console.log("\nCurrent Queue:");
+    if (customerQueue.length === 0) {
+        console.log("Queue is empty");
+    } else {
+        customerQueue.forEach((customer, index) => {
+            console.log(`${index + 1}. ${customer}`);
+        });
+    }
+}
+
+// Function to add a customer to the queue
+function addCustomer(name) {
+    customerQueue.push(name);
+    console.log(`${name} has been added to the queue with number ${customerQueue.length}`);
+    displayQueue();
+}
+
+// Function to service a customer
+function serviceCustomer(number) {
+    if (number < 1 || number > customerQueue.length) {
+        alert("Invalid number!");
+        return;
+    }
+    
+    const index = number - 1;
+    const customer = customerQueue[index];
+    customerQueue.splice(index, 1);
+    
+    console.log(`Now serving customer ${number}: ${customer}`);
+    displayQueue();
+    return customer;
+}
+
+// Initialize the queue with initial customers
+initialCustomers.forEach(customer => addCustomer(customer));
+
+// Main program loop
+while (true) {
+    const action = prompt("Enter 'add' to add customer, 'serve' to serve customer, or 'exit' to quit:");
+    
+    if (action === 'exit') {
+        break;
+    } else if (action === 'add') {
+        const name = prompt("Enter customer name:");
+        if (name) addCustomer(name);
+    } else if (action === 'serve') {
+        const number = parseInt(prompt("Enter number to be served:"));
+        serviceCustomer(number);
+    }
+}
+
+
+// assignment_LA5.js - Hash Table-based Customer Service System
+
+class HashTable {
+    constructor(size = 10) {
+        this.table = new Array(size).fill(null);
+        this.size = size;
+    }
+
+    hash(string) {
+        let hash = 0;
+        for (let i = 0; i < string.length; i++) {
+            hash += string.charCodeAt(i);
+        }
+        return hash % this.size;
+    }
+
+    insert(name) {
+        let index = this.hash(name);
+        
+        // Linear probing for collision resolution
+        while (this.table[index] !== null) {
+            index = (index + 1) % this.size;
+        }
+        
+        this.table[index] = name;
+        return index + 1; // Return customer number
+    }
+
+    remove(number) {
+        const index = number - 1;
+        if (index < 0 || index >= this.size || this.table[index] === null) {
+            alert("Invalid number!");
+            return null;
+        }
+        
+        const customer = this.table[index];
+        this.table[index] = null;
+        return customer;
+    }
+
+    display() {
+        console.log("\nCurrent Hash Table:");
+        this.table.forEach((customer, index) => {
+            if (customer !== null) {
+                console.log(`${index + 1}. ${customer}`);
+            }
+        });
+    }
+}
+
+// Initialize the hash table
+const customerTable = new HashTable();
+const initialCustomers = ['Elaine', 'Althea', 'Angelo', 'Lito', 'Engelbert'];
+
+// Add initial customers
+initialCustomers.forEach(customer => {
+    const number = customerTable.insert(customer);
+    console.log(`${customer} has been added with number ${number}`);
+});
+customerTable.display();
+
+// Main program loop
+while (true) {
+    const action = prompt("Enter 'add' to add customer, 'serve' to serve customer, or 'exit' to quit:");
+    
+    if (action === 'exit') {
+        break;
+    } else if (action === 'add') {
+        const name = prompt("Enter customer name:");
+        if (name) {
+            const number = customerTable.insert(name);
+            console.log(`${name} has been added with number ${number}`);
+            customerTable.display();
+        }
+    } else if (action === 'serve') {
+        const number = parseInt(prompt("Enter number to be served:"));
+        const customer = customerTable.remove(number);
+        if (customer) {
+            console.log(`Now serving customer ${number}: ${customer}`);
+            customerTable.display();
+        }
+    }
+}
+
+
